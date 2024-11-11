@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">s
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            /* Cambia el color de fondo aquí */
+            background-color: #2a2b50; /* Puedes ajustar el color a tu preferencia */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            width: 380px; /* Ajusta el tamaño del contenedor */
+            padding: 40px;
+            background-color: rgb(34, 37, 46);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .login-box img {
+            width: 80px; /* Ajusta el tamaño del logo */
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .login-box h2 {
+            font-size: 28px; /* Ajusta el tamaño del título */
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <img src="https://i.pinimg.com/736x/4d/0b/56/4d0b56ede3f10135870bd4ea8787e8a5.jpg" alt="Logo">
+        <h2>Login</h2>
+        <!-- Agregado el id, action y método POST -->
+        <form id="formLogin" action="/login" method="POST">
+            <div class="mb-3">
+                <!-- Cambiado el placeholder de Gmail a User -->
+                <input type="text" class="form-control" id="user" name="user" placeholder="User" > <!--le saque el required a los 2 que estaba al final-->
+                <label for="user"></label>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" >
+                <label for="pass"></label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <b type="button" > <!--unicamente para que haya un espacio entre los botones--> </b>
+            <a href="/register" type="button" class="btn btn-primary w-100">Registrarse</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if(alert) { %>
+        <script>
+          swal.fire({
+            title: "<%= alertTitle %>",
+            text: "<%= alertMessage %>",
+            icon: "<%= alertIcon %>",
+            showConfirmButton: <%= showConfirmButton %>, // Este no debe ir entre comillas
+            timer: <%= timer %> // Este también no debe ir entre comillas
+          }).then(() =>{
+            window.location = "/<%= ruta %>" // Eliminar el espacio después del "/"
+          })
+        </script>
+      <% } %>
+      
+
+</body>
+</html>

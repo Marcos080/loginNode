@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Enlace a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Apartado de personalización */
+
+        /* Color de fondo de la barra de navegación lateral */
+        .sidebar {
+            background-color: #0c0e1a; /* Cambia este valor para personalizar el color de fondo */
+        }
+
+        /* Color de los enlaces de la barra de navegación */
+        .sidebar .nav-link {
+            color: #adb5bd; /* Cambia este valor para personalizar el color de los enlaces */
+        }
+
+        /* Color de los enlaces activos */
+        .sidebar .nav-link.active {
+            color: #ffffff; /* Cambia este valor para personalizar el color del enlace activo */
+            background-color: #0fa4df; /* Fondo del enlace activo */
+        }
+
+        /* Color al pasar el cursor por encima de los enlaces */
+        .sidebar .nav-link:hover {
+            color: #ffffff; /* Cambia este valor para personalizar el color al pasar el cursor */
+            background-color: #495057; /* Cambia este valor para el fondo en hover */
+        }
+
+        /* Estilo adicional para que el sidebar se mantenga fijo */
+        body {
+            font-size: 0.875rem;
+        }
+
+        .sidebar-sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: 0.5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Estilo del contenido principal */
+        .content {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra de navegación lateral (Sidebar) -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Órdenes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Clientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Integraciones
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <h1>Bienvenido:
+                        <% if (user) { %>
+                          <span class= "badge bg-info"><%= user.name %></span>
+                        <% } %>
+                    </h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <!-- BOTON DE LOGOUT ESTILIZADO -->
+                        <a class="btn btn-outline-danger d-flex align-items-center gap-2" href="logout" role="button" style="text-decoration: none;">
+                            <svg class="bi" width="20" height="20" fill="currentColor"><use xlink:href="#door-closed"/></svg>
+                            Sign out
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <h2>Sección de peruanos</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Cabecera 1</th>
+                                <th>Cabecera 2</th>
+                                <th>Cabecera 3</th>
+                                <th>Cabecera 4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Dato 1</td>
+                                <td>Dato 2</td>
+                                <td>Dato 3</td>
+                                <td>Dato 4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Dato 1</td>
+                                <td>Dato 2</td>
+                                <td>Dato 3</td>
+                                <td>Dato 4</td>
+                            </tr>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Enlace a los scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
