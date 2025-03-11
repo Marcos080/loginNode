@@ -1,0 +1,87 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fondo animado */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(45, 52, 54, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/cubes.png"); /* Patrón sutil */
+    opacity: 0.2;
+    z-index: -1;
+}
+
+@keyframes animateBg {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+body::before {
+    animation: animateBg 10s infinite linear;
+}
+
+/* Estilos del login */
+.login-box {
+    width: 380px;
+    padding: 40px;
+    background-color: rgba(34, 37, 46, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.login-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.login-box h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Estilos para los inputs */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos para los botones */
+.btn-primary {
+    background-color: #4a69bd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1e3799;
+}

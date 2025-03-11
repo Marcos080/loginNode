@@ -1,0 +1,105 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fondo con patrón */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(58, 123, 213, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); /* Nuevo patrón */
+    opacity: 0.2;
+    z-index: -1;
+}
+
+@keyframes animateBg {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+body::before {
+    animation: animateBg 15s infinite linear;
+}
+
+/* Líneas decorativas */
+.line {
+    position: absolute;
+    width: 2px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+    top: 0;
+    animation: moveLines 10s infinite linear;
+}
+
+.line:nth-child(1) { left: 10%; }
+.line:nth-child(2) { left: 30%; }
+.line:nth-child(3) { left: 50%; }
+.line:nth-child(4) { left: 70%; }
+.line:nth-child(5) { left: 90%; }
+
+@keyframes moveLines {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Figuras geométricas */
+.shape {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: floatShapes 8s infinite alternate ease-in-out;
+}
+
+.shape:nth-child(1) { top: 20%; left: 15%; }
+.shape:nth-child(2) { top: 50%; left: 40%; }
+.shape:nth-child(3) { top: 80%; left: 70%; }
+
+@keyframes floatShapes {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(20px); }
+}
+
+
+
+
+
+
+/* Estilo adicional para el formulario */
+.card {
+    background-color: rgb(174, 201, 201);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+body {
+   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
